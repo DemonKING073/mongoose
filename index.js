@@ -15,10 +15,23 @@ connect.then((db) => {
     })
         .then((dish) => {
             console.log(dish)
-            return Dishes.find({}).exec()
+            return Dishes.findByIdAndUpdate(dish._id, {
+                $set:{ description: 'naya ho' }
+            },{
+                new: true 
+            }).exec()
         })
-        .then((dishes) => {
-            console.log(dishes)
+        .then((dish) => {
+            console.log(dish)
+            dish.comments.push({
+                rating:3,
+                comment:' jot ko theo muizi',
+                author: 'Chris Thapa'
+            })
+            return dish.save()
+        })
+        .then((dish) => {
+            console.log(dish)
 
             return Dishes.deleteMany()
         })
