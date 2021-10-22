@@ -9,11 +9,10 @@ const connect = mongoose.connect(url)
 connect.then((db) => {
     console.log('Connected correctly to server')
 
-    const newDish = Dishes({
+    Dishes.create({
         name:"momo",
         description:"mitho hunxa muzi"
     })
-    newDish.save()
         .then((dish) => {
             console.log(dish)
             return Dishes.find({}).exec()
@@ -28,5 +27,5 @@ connect.then((db) => {
         })
         .catch((err) => {
             console.log(err)
-        })
+    })
 })
