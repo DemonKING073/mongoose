@@ -1,0 +1,14 @@
+{
+  "name": "mongoose",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index"
+  },
+  "description": "yetekai matra ho",
+  "main": "index.js",
+  "author": "Din Bibek Thapa",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^6.0.12"
+  }
+}
